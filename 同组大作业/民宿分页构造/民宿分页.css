@@ -1,0 +1,29 @@
+/*
+* @Author: dell
+* @Date:   2019-12-24 17:07:51
+* @Last Modified by:   dell
+* @Last Modified time: 2019-12-24 19:41:05
+*/
+		#main{
+			width:800px;
+			height: 620px;
+		  	margin:auto;
+		  	position: relative;
+		  	border: 2px solid lightblue;
+		  	overflow: hidden;
+		}
+		#smallpic{
+			height:100px; 
+			width: 940px;
+			left: -60px;
+			margin:auto;
+			/* overflow: hidden; */
+			position: absolute;
+			border: 2px solid lightblue;
+		}
+	 	#smallpic img:hover{
+		    cursor:pointer;
+		}
+		.pb {
+		    border:3px solid red;
+		}

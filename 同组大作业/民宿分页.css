@@ -1,0 +1,45 @@
+/*
+* @Author: dell
+* @Date:   2019-12-24 17:07:51
+* @Last Modified by:   dell
+* @Last Modified time: 2019-12-25 18:51:34
+*/
+		#main{
+			width:804px;
+			height: 612px;
+		  	margin:auto;
+		  	position: relative;
+		  	border: 2px solid lightblue;
+		  	overflow: hidden;
+		}
+		#smallpic{
+			height:102px; 
+			width: 942px;
+			left: -60px;
+			margin:auto;
+			position: absolute;
+			border: 2px solid #99CCFF;
+		}
+	 	#smallpic img:hover{
+		    cursor:pointer;
+		}
+		.pb {
+		    border:3px solid #FFCC33;
+		}
+		.no1{
+			font-family: 仿宋;
+			font-size: 35px;
+			
+			color: #336699;
+		}
+		.no2{
+			height: 190px;
+			width: 700px;
+			/* line-height: 50px; */
+			font-family: 宋体;
+			font-size: 23px;
+			margin: auto;
+			/* padding-top: 40px; */
+			color: #FF9900;
+			/* border: 2px solid lightblue; */
+		}

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>海滨民宿</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul,li{
+			list-style: none;
+		}
+		a{
+			text-decoration:none;
+			color: #000;
+		}
+		.BigBox{
+			padding-top: 10px;
+			width: 100%;
+			height: 100%;
+			position: relative;
+			margin: auto;
+		} 
+		.top{
+			height: 30px;
+			line-height: 30px;
+			color: black;
+		}
+		.topCenter{
+			width: 1200px;
+			height: 30px;
+			margin: 0 auto;
+		}
+
+		.topCenter ul{
+			float: right;
+		}
+		.topCenter li{
+			float: left;
+		}
+		.topCenter .c{
+			width: 160px;
+		}
+		.topCenter .a{
+			width: 40px;
+			text-align: center;
+		}
+		.topCenter .b{
+			width: 20px;
+			text-align: center;
+			margin-top: 2px;
+			margin-left: 10px;
+		}
+		.bigBox{
+			height:50px;
+			border-bottom: 4px solid #00ACF6;
+		}
+		.container{
+			width:1200px;
+			height:50px;
+			margin:0 auto;
+			margin-top: 10px;
+		}
+		.container li{
+			line-height:40px;
+			width:80px;
+			text-align:center;
+			display:inline-block;
+			margin-right:40px;
+		}
+		.container select{
+			height:40px;
+			padding-top:0px;
+			font:20px;
+			color:#050505;
+		}
+		.container a{
+			text-align:center;
+			font:20px;
+			color:#050505;
+		}
+		.container li:hover > a{
+			color: #ffffff;
+		}
+		.container li:hover{
+			background:#00ACF6;
+			border-radius:6px;
+		}
+		.u{
+            height: 100px;
+            background: #323232;
+        }
+        .uw{
+            width: 1200px;
+            margin: 0 auto;
+            color: #f5f5f5;
+        }
+        .u1{
+            padding-top: 30px;
+            text-align: center;
+         }
+         .u1 a{
+         	color: white;
+         }
+        .u2{
+            text-indent: 460px;
+        }
+        .middle{
+			height: 85px;
+			display: inline-block;
+		}
+		.logo{
+			margin-left: 180px;
+			float: left;
+			margin-top: 5px;
+			margin-bottom: 15px;
+		}
+		.logo img{
+			width: 210px;
+			height: 85px;
+		}
+		.mcontent{
+			position: absolute;
+			padding: 0 8px;
+		}
+		.search{
+			color: hsl(0, 0%, 20%);
+			height: 23px;
+			width: 440px;
+			padding: 12px 44px;
+			background-image: url("https://q-xx.bstatic.com/psb/attractions-frontend/static/media/icon_search.6efe24de.svg");
+			background-repeat: no-repeat;
+			background-size: 30px;
+			background-position:bottom 11px left 11px;
+			border:1px solid hsl(0,0%,42%);
+			border-radius:22px;
+			position: relative;
+			left: 490px;
+			top: 25px;
+			font: 14.78px '微软雅黑';
+		}
+		.hidden{
+			width: 410px;
+			height: 100px;
+			position: absolute;
+			padding: 40px 8px 20px;
+			background-color: #fff;
+			box-shadow:0px 4px 4px 6px rgba(0,0,0,0.2);
+			border-radius:8px 8px 30px 30px ;
+			float: top;
+		}
+		.hidden li{
+			height: 20px;
+			position: relative;
+			left: 20px;
+			bottom: 20px;
+			display: block;
+			margin-top: 5px;
+		}
+		.hidden a{
+			font: normal 17px '微软雅黑';
+			padding-bottom: 15px;
+			color: orange;
+		}	
+		.hidden a:hover{
+			color: red;
+		}
+		.right img{
+			float: right;
+			width: 410px;
+			height: 105px;
+			margin-left: 958px;
+			position: relative;
+			bottom: 95px;
+			opacity: 0.9;
+		}
+		#p1{
+         	height:180px;
+            width:50px;
+            float: right;
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            display:block;
+         }
+          #p1 li{
+            height: 35px;
+            width: 40px;
+            text-align:center;
+            line-height: 50px;
+            padding-top:5px;
+            border: #767575 solid 1px;
+            border-radius:10px;
+           
+         }
+         #do1 img{
+            width:30px;
+            height:30px;  
+         }
+		#box1{
+			width: 700px;
+			height: 400px;
+			border: 2px solid #00ACF6;
+			margin: auto;
+			position: relative;
+			overflow: hidden;
+			margin-bottom: 70px;
+		}
+		.box3{
+			height: 400px;
+			width: 4900px;
+			left: -700px;
+			/* border: 2px solid lightblue; */
+			margin: auto;
+			position: absolute;
+			overflow: hidden;
+		}
+		.box3 img{
+			width: 700px;
+			height: 400px;
+		}
+		.slide{
+			width: 700px;
+			float: left;
+		} 
+		.txt1{
+			height: 50px;
+			width: 300px;
+			line-height: 50px;
+			font-family: 仿宋;
+			font-size: 35px;
+			margin: auto;
+			color: #336699;
+			margin-top: 10px;
+			/* border: 2px solid lightblue; */
+		}
+		.txt2{
+			height: 50px;
+			width: 350px;
+			line-height: 50px;
+			font-family: 宋体;
+			color: gray;
+			margin: auto;
+			/* border: 2px solid lightblue; */
+		}
+		.txt3{
+			height: 100px;
+			width: 850px;
+			line-height: 50px;
+			font-family: 仿宋;
+			font-size: 25px;
+			margin: auto;
+			color: #FF9900;
+			/* border: 2px solid lightblue; */
+		}
+		.no1{
+			height: 50px;
+			width: 1000px;
+			line-height: 50px;
+			font-family: 仿宋;
+			font-size: 35px;
+			margin: auto;
+			padding-top: 40px;
+			color: #336699;
+			/* border: 2px solid lightblue; */
+		}
+		.no2{
+			height: 120px;
+			width: 700px;
+			/* line-height: 50px; */
+			font-family: 宋体;
+			font-size: 23px;
+			margin: auto;
+			/* padding-top: 40px; */
+			color: #FF9900;
+			/* border: 2px solid lightblue; */
+		}
+		.no6{
+			width: 990px;
+			height: 520px;
+			margin: auto;
+			margin-top: 10px;
+			/* padding-top: 10px; */
+			border: 2px solid #00ACF6;
+			/* border-radius:22px; */
+			position: relative;
+		}
+		.no3{
+			width: 750px;
+			height: 520px;
+			/* border: 2px solid lightblue; */
+		}
+		.no6 div{
+			float: left;
+		}
+		.no4{
+			height: 300px;
+		}
+		.no5 img{
+			width: 240px;
+			height: 170px;
+		}
+		.no7{
+			height: 50px;
+			color: gray;
+		}
+		.no8{
+			width: 1000px;
+			height: 520px;
+			margin: auto;
+			margin-top: 10px;
+			/* padding-top: 10px; */
+			border: 2px solid #00ACF6;
+			/* border-radius:22px; */
+			position: relative;
+		}
+		.no8 div{
+			height: 260px;
+			width: 500px;
+			/* position: absolute; */
+			float: left;
+		}
+		.no8 img{
+			height: 260px;
+			width: 500px;
+		}
+	</style>
+	<script src="animate.js"></script>
+</head>
+<body>
+	<div class="top">
+		<div class="topCenter">
+			<ul>
+				<li class="c">欢迎来到一源一舍，请</li>
+				<li class="a"><a href="denglu.html">登录</a></li>
+				<li>|</li>
+				<li class="a"><a href="注册.html">注册</a></li>
+				<li class="b"><a href=""><img src="小标志/wx.png"></a></li>
+				<li class="b"><a href=""><img src="小标志/qq.png"></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class = "middle">
+		<div class = "logo">
+			<img src = "小标志/logo.png" alt = "logo">
+		</div>
+		<div class = "mcontent">
+			<form>
+				<input class = "search" id = "search" type = "text" name = "search" placeholder="搜索目的地、城市、景点……" value=""/>
+			</form>
+		</div>
+<!-- 		<ul class = "hidden" id = "hidden" style = "opacity: 0; margin-left: 1000px; margin-top: 10px;">
+			<li>
+				<a href="#" target = "_blank">查看民宿详细分类</a>
+			</li>
+			<li>
+				<a href="#" target = "_blank">海滨民宿</a>
+			</li>
+			<li>
+				<a href="#" target = "_blank">冰雪民宿</a>
+			</li>
+			<li>
+				<a href="#" target = "_blank">温泉民宿</a>
+			</li>
+			<li>
+				<a href="#" target = "_blank">传统建筑民宿</a>
+			</li>
+		</ul> -->
+		<div class = "right">
+			<img src = "小标志/imgd06.png" alt = "scene"/> 
+		</div>
+	</div>
+	<div class="bigBox">
+		<div class="container">
+			<ul>
+	    		<li><a href="homepage.html">首页</a></li>
+    			<li><a href="新海滨民宿.html">海滨民宿</a></li>
+    			<li><a href="zong.html">冰雪民宿</a></li>
+    			<li><a href="index.html">温泉民宿</a></li>
+    			<li><a href="TraditResidBuildings.html">传统民宿</a></li>
+    			<li><a href="#">其他</a></li>
+	    	</ul>
+		</div>
+	</div>
+	<div class="BigBox">
+		<div>
+			<div class="txt1"><h2>海滨民宿篇</h2></div>
+			<div class="txt2">
+				<p>作者：归心&nbsp&nbsp&nbsp&nbsp&nbsp时间：2019年12月25日</p>
+			</div>
+		</div>
+		<div id="box1">
+			<div class="box3">
+				<div class="slide"><a href="泰国民宿.html"><img src="泰国民宿/标志.JPG"></a></div>
+				<div class="slide"><a href="深圳奥比都斯.html"><img src="深圳奥比都斯/imga12.jpg"></a></div>
+				<div class="slide"><a href="江浙山乘小墅.html"><img src="江浙山乘小墅/imga20.jpg" style="width:700px"></a></div>
+				<div class="slide"><a href="三亚民宿.html"><img src="三亚民宿/imga25.jpg" style="width:700px"></a></div>
+				<div class="slide"><a href="深圳山海原著民俗.html"><img src="深圳山海原著民俗/imga19.jpg"></a></div>
+				<div class="slide"><a href="泰国民宿.html"><img src="泰国民宿/标志.JPG"></a></div>
+				<div class="slide"><a href="深圳奥比都斯.html"><img src="深圳奥比都斯/imga12.jpg"></a></div>
+			</div>
+		</div>
+		<div class="no7">
+				<p align="center">✧✧✧✧✧✧点击图片即可获得更多相关信息✧✧✧✧✧✧</p>
+			</div>
+		<div>
+			<div class="no2">
+				<p>&nbsp^-^&nbsp&nbsp接下来由小编为您详细介绍这五个海滨民宿哟</p>
+				<br>
+				<p align="center">让我们一起去看海吧！</p>
+			</div>
+			<div class="no1">
+				<h4 align="center">&nbsp&nbspNO:1&nbsp&nbsp奥比都斯民宿</h4>
+			</div>
+			<div class="no6" id="jsPic">
+				<div class="no3">
+					<a href="深圳奥比都斯.html"><img src="深圳奥比都斯/imga11.jpg" width="750" height="520" />
+					</a>
+				</div>
+				<div class="no5">
+					<a href="深圳奥比都斯.html"><img src="深圳奥比都斯/imga12.jpg"/></a>
+				</div>
+				<div class="no5">
+					<a href="深圳奥比都斯.html"><img src="深圳奥比都斯/新来的1.jpg"/></a>
+				</div>
+				<div class="no5">
+					<a href="深圳奥比都斯.html"><img src="深圳奥比都斯/新来的2.jpg"/></a>
+				</div>
+			</div>
+			<div class="no7">
+				<p align="center">✧✧✧✧✧✧点击图片即可获得更多相关信息✧✧✧✧✧✧</p>
+			</div>
+			<div class="no1">
+				<h4 align="center">&nbsp&nbspNO:2&nbsp&nbsp山乘小墅民宿</h4>
+			</div>
+			<div class="no8" id="jsRelative">
+				<div>
+					<a href="江浙山乘小墅.html"><img src="江浙山乘小墅/imga20.jpg"/>
+					</a>
+				</div>
+				<div>
+					<a href="江浙山乘小墅.html"><img src="江浙山乘小墅/imga22.jpg"/></a>
+				</div>
+				<div>
+					<a href="江浙山乘小墅.html"><img src="江浙山乘小墅/imga26.jpg"/></a>
+				</div>
+				<div>
+					<a href="江浙山乘小墅.html"><img src="江浙山乘小墅/imga21.jpg"/></a>
+				</div>
+			</div>
+			<div class="no7">
+				<p align="center">✧✧✧✧✧✧点击图片即可获得更多相关信息✧✧✧✧✧✧</p>
+			</div>
+			<div class="no1">
+				<h4 align="center">&nbsp&nbspNO:3&nbsp&nbsp山海原著民宿</h4>
+			</div>
+			<div class="no6" id="jsPic1">
+				<div class="no3">
+					<a href="深圳山海原著民俗.html"><img src="深圳山海原著民俗/imga13.jpg" width="750" height="520" />
+					</a>
+				</div>
+				<div class="no5">
+					<a href="深圳山海原著民俗.html"><img src="深圳山海原著民俗/imga19.jpg"/></a>
+				</div>
+				<div class="no5">
+					<a href="深圳山海原著民俗.html"><img src="深圳山海原著民俗/imga16.jpg"/></a>
+				</div>
+				<div class="no5">
+					<a href="深圳山海原著民俗.html"><img src="深圳山海原著民俗/imga14.jpg"/></a>
+				</div>
+			</div>
+			<div class="no7">
+				<p align="center">✧✧✧✧✧✧点击图片即可获得更多相关信息✧✧✧✧✧✧</p>
+			</div>
+			
+			<div class="no1">
+				<h4 align="center">&nbsp&nbspNO:4&nbsp&nbsp三亚民宿</h4>
+			</div>
+			<div class="no8" id="jsRelative1">
+				<div class="no3">
+					<a href="三亚民宿.html"><img src="三亚民宿/imga25.jpg" width="750" height="520" />
+					</a>
+				</div>
+				<div class="no5">
+					<a href="三亚民宿.html"><img src="三亚民宿/imga26.jpg"/></a>
+				</div>
+				<div class="no5">
+					<a href="三亚民宿.html"><img src="三亚民宿/imga23.jpg"/></a>
+				</div>
+				<div class="no5">
+					<a href="三亚民宿.html"><img src="三亚民宿/imga21.jpg"/></a>
+				</div>
+			</div>
+			<div class="no7">
+				<p align="center">✧✧✧✧✧✧点击图片即可获得更多相关信息✧✧✧✧✧✧</p>
+			</div>
+			
+			<div class="no1">
+				<h4 align="center">&nbsp&nbspNO:4&nbsp&nbsp泰国民宿</h4>
+			</div>
+			<div class="no6" id="jsPic2">
+				<div class="no3">
+					<a href="泰国民宿.html"><img src="泰国民宿/标志.JPG" width="750" height="520" />
+					</a>
+				</div>
+				<div class="no5">
+					<a href="泰国民宿.html"><img src="泰国民宿/imga28.jpg"/></a>
+				</div>
+				<div class="no5">
+					<a href="泰国民宿.html"><img src="泰国民宿/imga29.jpg"/></a>
+				</div>
+				<div class="no5">
+					<a href="泰国民宿.html"><img src="泰国民宿/imga33.jpg"/></a>
+				</div>
+			</div>
+			<div class="no7">
+				<p align="center">✧✧✧✧✧✧点击图片即可获得更多相关信息✧✧✧✧✧✧</p>
+			</div>
+			
+		</div>
+		<div id="p1">
+			<ul id="do1">
+				<li><img src="image/二维码.png"></li>
+			    <li><img src="image/qq2.png"></li>
+		        <li><img src="image/微信.png" ></li>
+		        <li id="list" style="display:none;"><a href="#"><img src="image/top.png" ></a></li>
+			</ul>
+		</div>
+		<div class="u">
+	        <div class="uw">
+	            <p class="u1">
+	                <a href="homepage.html">首页</a> | <a href="共用代码的链接.html">工作机会</a> | <a href="共用代码的链接.html">信任与安全</a> | <a href="共用代码的链接.html">多元化与归属感</a> | <a href="共用代码的链接.html">缤纷体验</a> | <a href="共用代码的链接.html">开展体验</a> | <a href="共用代码的链接.html">帮助</a> | <a href="共用代码的链接.html">法律服务</a>
+	            </p>
+	            <br>
+	            <p class="u2">
+	                © 2019-2020 一源一舍 版权所有
+	            </p>
+	        </div>
+    	</div>
+	</div>
+</body>
+<script src="轮播图链接.js"></script>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.dengluBox{
+			width: 100%;
+			height: 800px;
+			margin: 0 auto;
+			background: url('images/23.jpg');
+			background-repeat: no-repeat;
+			background-color: #ffffff;
+			background-size: 100%;
+		}
+		.box{
+			width: 300px;
+			height: 400px;
+			padding: 0 20px;
+			border: 2px solid #123C86;
+			margin: 0 auto;
+			float: left;
+			position: relative;
+			margin-top: 200px;
+			margin-left: 400px;
+		}
+		.tit{
+			margin-top: 5px;
+			margin-bottom: 30px;
+		}
+		.brand{
+			color: #000000;
+			font-size: 18px;
+			margin-right: 20px;
+		}
+		.inp{
+			width: 100%;
+			height: 40px;
+			text-indent: 8px;
+		}
+		.notice{
+			height: 30px;
+			line-height: 30px;
+			font-size: 12px;
+		}
+
+		.code{
+			width: 60%;
+		}
+		.getCode{
+			width: 35%;
+			height: 44px;
+			float: right;
+			border: none;
+			background-color: #eee;
+		}
+		.codeImg{
+			height: 40px;
+		}
+		.btn{
+			background: #1688ea;
+			width: 100%;
+			height: 40px;
+			border: none;
+			margin-top: 8px;
+			color: #fff;
+			border-radius: 3px;
+		}
+	</style>
+</head>
+<body>
+	<div class="dengluBox">
+		<div class="box">
+			<p class="tit">
+				<span class="brand">一源一舍</span>
+				<span>用户登录</span>
+			</p>
+			<input class="inp" type="text" placeholder="用户名">
+			<p class="notice"></p>
+			<input class="inp" type="password" placeholder="密码">
+			<p class="notice"></p>
+			<div>
+				<input class="inp code" type="text" placeholder="验证码">
+				<button class="getCode">获取验证码</button>
+			</div>
+			<div class="codeImg">
+				<!-- 点击‘获取验证码’按钮后，在此处添加 验证码图片的img标签 -->
+				<img id="code" />
+			</div>
+			<p class="notice"></p>
+
+			<input type="checkbox" checked>下次自动登录
+			<button class="btn" href="">登录</button>
+		</div>
+	</div>
+</body>
+
+<script>
+	// 存放图片的数组
+	var imgsArr = new Array("image/zAZfB.jpg","image/ZEhUN.jpg","image/zFC9H.jpg","image/zhWY9.jpg","image/Zin4c.jpg","image/ZITGj.jpg","image/zJ6iV.jpg","image/zjsKP.jpg","image/ZKc9S.jpg","image/zKDXU.jpg");
+	// 存放图片验证码的数组
+	var imgCodeArr = new Array("zAZfB","ZEhUN","zFC9H","zhWY9","Zin4c","ZITGj","zJ6iV","zjsKP","ZKc9S","zKDXU");
+	
+	var inp = document.getElementsByClassName("inp");
+    var notice = document.getElementsByClassName("notice");
+	var getCode = document.getElementsByClassName("getCode");
+	var codeImg = document.getElementsByClassName("codeImg");
+	var btn = document.getElementsByClassName("btn");
+	// 实现用户名文本域获得焦点时，在文本框下出现提示文字;失去焦点时提示文字消失
+	inp[0].onclick = function(){
+        	notice[0].innerHTML = "请输入4-10位用户名";
+	}
+    inp[0].onblur = function(){
+		notice[0].innerHTML = "";
+    }
+    // 实现密码文本域获得焦点时，在文本框下出现提示文字;失去焦点时提示文字消失
+    inp[1].onclick = function(){
+    	notice[1].innerHTML = "请输入6-12位的密码";
+    }
+    inp[1].onblur = function(){
+        notice[1].innerHTML = "";
+    }
+    // 实现点击"获取验证码"按钮产生随机图片
+    var randomImg;
+    getCode[0].onclick = function(){
+		var img = new Image();
+		randomImg = Math.floor(Math.random() * 10);
+		img.src = imgsArr[randomImg];
+		codeImg[0].replaceChild(img, codeImg[0].firstChild);
+	}
+	// 实现点击登录按钮时，对登录条件的判断
+	btn[0].onclick = function(){
+		// 获取用户名、密码、验证码文本框中输入的内容
+		var userName = inp[0].value;
+		var userPassword = inp[1].value;
+		var values = document.getElementsByClassName("inp code")[0].value;
+		// 定义三个变量并赋初值，作为登录成功的判断条件
+		var a1 = 1;
+		var a2 = 1;
+		var a3 = 1;
+		// 用户名不符合要求或没有填写,相应位置出现指定提示文字
+		if(userName.length == 0){
+			notice[0].innerHTML = "用户名不能为空!";
+			a1 = 0;
+		}
+		 else if(userName.length < 4 || userName.length > 10){
+			notice[0].innerHTML = "用户名位数不对!";
+			a1 = 0;
+		}
+		// 密码不符合要求或没有填写,相应位置出现指定提示文字
+		if(userPassword.length == 0){
+			notice[1].innerHTML = "密码不能为空!";
+			a2 = 0;
+		}
+		else if(userPassword.length < 6 || userPassword.length > 12){
+			notice[1].innerHTML = "密码位数不对!";
+			a2 = 0;
+		}
+		// 验证码填写不正确或没有填写,相应位置出现指定提示文字
+		if(values.length == 0){
+			notice[2].innerHTML = "验证码不能为空!";
+			a3 = 0;
+		}
+		else if(values != imgCodeArr[randomImg]){
+			notice[2].innerHTML = "验证码错误!";
+			a3 = 0;
+		}
+		// 当且仅当用户名、密码、验证码都符合条件时登录成功
+		if(a1==1 && a2==1 && a3==1){
+			alert("登录成功");
+			location = "homepage.html";
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,389 @@
+/*
+* @Author: 22213
+* @Date:   2019-12-23 13:45:09
+* @Last Modified by:   DELL
+* @Last Modified time: 2019-12-26 16:12:27
+*/
+*{
+	padding: 0;
+	margin: 0;
+}
+ul,li{
+	list-style: none;
+}
+a{
+	text-decoration:none;
+	color: #000000;
+}
+/* -----------------------顶部------------------------------------ */
+.top{
+	height: 30px;
+	line-height: 30px;
+	color: black;
+}
+.topCenter{
+	width: 1200px;
+	height: 30px;
+	/* border-bottom: 1px solid red; */
+	margin: 0 auto;
+}
+.topCenter ul{
+	float: right;
+}
+.topCenter li{
+	float: left;
+}
+.topCenter .c{
+	width: 160px;
+}
+.topCenter .a{
+	width: 40px;
+	text-align: center;
+}
+.topCenter .b{
+	width: 20px;
+	text-align: center;
+	margin-top: 2px;
+	margin-left: 10px;
+}
+/* -----------------------搜索块---------------------------------- */
+.middle{
+	height: 85px;
+	display: inline-block;
+}
+.logo{
+	margin-left: 180px;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+.logo img{
+	width: 210px;
+	height: 85px;
+}
+.mcontent{
+	position: absolute;
+	padding: 0 8px;
+}
+.search{
+	color: hsl(0, 0%, 20%);
+	height: 23px;
+	width: 440px;
+	padding: 12px 44px;
+	background-image: url("https://q-xx.bstatic.com/psb/attractions-frontend/static/media/icon_search.6efe24de.svg");
+	background-repeat: no-repeat;
+	background-size: 30px;
+	background-position:bottom 11px left 11px;
+	border:1px solid hsl(0,0%,42%);
+	border-radius:22px;
+	position: relative;
+	left: 490px;
+	top: 25px;
+	font: 14.78px '微软雅黑';
+}
+.hidden{
+	width: 410px;
+	height: 100px;
+	position: absolute;
+	padding: 40px 8px 20px;
+	background-color: #fff;
+	box-shadow:0px 4px 4px 6px rgba(0,0,0,0.2);
+	border-radius:8px 8px 30px 30px ;
+	float: top;
+}
+.hidden li{
+	height: 20px;
+	position: relative;
+	left: 20px;
+	bottom: 20px;
+	display: block;
+	margin-top: 5px;
+}
+.hidden a{
+	font: normal 17px '微软雅黑';
+	padding-bottom: 15px;
+	color: orange;
+}	
+.hidden a:hover{
+	color: red;
+}
+.Right img{
+	float: right;
+	width: 410px;
+	height: 105px;
+	margin-left: 958px;
+	position: relative;
+	bottom: 95px;
+	opacity: 0.9;
+}
+/* -----------------------导航栏---------------------------------- */
+.bigBox{
+	height:45px;
+	border-bottom: 4px solid #00ACF6;
+}
+.container{
+	width:1200px;
+	height:45px;
+	margin:0 auto;
+	margin-top: 10px;
+	background: #ffffff;
+}
+.container li{
+	line-height:40px;
+	width:80px;
+	text-align:center;
+	display:inline-block;
+	margin-right:40px;
+}
+.container select{
+	height:40px;
+	padding-top:0px;
+	font:20px;
+	color:#050505;
+}
+.container a{
+	text-align:center;
+	font:20px;
+	color:#050505;
+}
+.container li:hover > a{
+	color: #ffffff;
+}
+.container li:hover{
+	background:#4A94ED;
+	border-radius:6px;
+}
+/* ------------------------------图片区------------------------------------ */
+.mixBox{
+	width: 1200px;
+	height: 630px;
+	margin:0 auto;
+	margin-top: 10px;
+}
+.mixBox img{
+	margin-left: 5px;
+	margin-top: 5px;
+}
+.left{
+	width: 655px;
+	height: 620px;
+	margin-top: 5px;
+	margin-left: 5px;
+	position: relative;
+	float: left;
+}
+.smallImgsBox{
+	width: 655px;
+	height: 210px;
+	margin-top: 10px;
+}
+/* ---------------------图片滚动------------------ */
+.moveBox{
+	width: 640px;
+	height: 400px;
+	position: relative;
+	overflow: hidden;
+}
+.silder{
+	width: 3840px;
+	position: absolute;
+	left: -640px;
+}
+.sild{
+	width: 640px;
+	overflow: hidden;
+	float: left;
+}
+.moveBox>span{
+	display: block;
+	width: 20px;
+	height: 40px;
+	text-align: center;
+	cursor: pointer;
+	color: rgb(255,255,255,0.75);
+	top: 175px;
+	line-height: 40px;
+	background: rgb(255,0,0);
+	font-size: 20px;
+	position: absolute;
+	opacity: 0;
+}
+#pre{
+	left: 30px;
+}
+#nex{
+	right: 30px;
+}
+.nav{
+	position: absolute;
+	left: 200px;
+	bottom: 20px;
+}
+.nav>li{
+	float: left;
+	width: 15px;
+	height: 15px;
+	background: #ccc;
+	cursor: pointer;
+	margin: 0 10px;
+	border-radius: 50%;
+	font-size: 12px;
+	display: inline;
+	line-height: 20px;
+}
+.nav .active{
+	background: red;
+}
+/* -----------------------------右侧字体----------------------------- */
+.right{
+	width: 525px;
+	height: 610px;
+	margin-top: 10px;
+	margin-left: 3px;
+	position: relative;
+	float: left;
+	border: 2px solid #5B96FA;
+}
+.right h{
+	font-family: "楷体";
+	font-size: 50px;
+	font-weight: bold;
+	color: #0284D6;
+	padding-left: 130px;
+}
+.right li{
+	font-size: 20px;
+	color: #000000;
+	font-family: "楷体";
+	line-height: 1.5em;
+}
+/* ------------------------字滚动------------------------------------ */
+.gundong{
+	width: 525px;
+	height: 530px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+/* ------------------------国内温泉民宿介绍---------------------------- */
+.box{
+	width: 1200px;
+	height: 800px;
+	margin:0 auto;
+	margin-top: 20px;
+}
+.h{
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+}
+.contain{
+	width: 1000px;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+.contain p{
+	font-size: 20px;
+	font-family: "楷体";
+	line-height: 1.5em;
+}
+.contain h{
+	font-size: 25px;
+	font-family: "楷体";
+	font-weight: bold;
+}
+.data{
+	width: 700px;
+	height: 360px;
+	margin: 0 auto;
+}
+.title{
+	font-size: 30px;
+	font-weight: bold;
+	color: #66CCFF;
+	text-align: center;
+}
+.onitBig{
+	width: 200px;
+	height: 140px;
+	position: relative;
+	float: left;
+	margin-left: 30px;
+	margin-top: 135px;
+	overflow: hidden;
+}
+.imgBox{
+	width: 650px;
+	height: 400px;
+	margin:0 auto;
+}
+.inbox{
+	width: 100px;
+	height: 150px;
+	margin: 15px;
+	position: relative;
+    float: left;
+}
+.circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    float: left;
+}
+.wenzi{
+	width: 50px;
+	height: 20px;
+	margin-top: 10px;
+	margin-left: 30px;
+	position: relative;
+    float: left;
+}
+.wenzi a{
+	font-size: 15px;
+	color: #000000;
+}
+/*---------------------------右侧----------------------------*/
+#p1{
+	height:180px;
+    width:50px;
+    float: right;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    display:block;
+}
+#p1 li{
+	height: 35px;
+    width: 40px;
+    text-align:center;
+    line-height: 50px;
+    padding-top:5px;
+    border: #767575 solid 1px;
+    border-radius:10px;          
+}
+#p1 img{
+   width:30px;
+   height:30px;  
+}
+/* --------------------------底部----------------------------- */
+.u{
+   height: 100px;
+   background: #323232;
+}
+.uw{
+   width: 1200px;
+   margin: 0 auto;
+   color: #f5f5f5;
+}
+.uw a{
+	color: #f5f5f5;
+}
+.u1{
+   padding-top: 30px;
+   text-align: center;
+}
+.u2{
+   text-indent: 460px;
+}
